@@ -4,7 +4,6 @@ export const sessionSlice = createSlice({
   name: 'session',
   initialState: {
     login: {
-
     }
   },
   reducers: {

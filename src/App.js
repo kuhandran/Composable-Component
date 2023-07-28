@@ -4,6 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 import { Root } from "./Routes/Root";
+import './index.css';
 
 export const App = createBrowserRouter(
   createRoutesFromElements(
