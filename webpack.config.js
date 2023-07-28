@@ -49,10 +49,15 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
       {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/, // to import images and fonts
-        loader: "url-loader",
-        options: { limit: false },
-      },
+        test: /\.(png|jpe?g|gif|ico)(\?\S*)?$/,
+        loader: 'file-loader',
+        include: /static\/img/,
+        options: {
+          esModule: false,
+          outputPath: '/static/',
+          publicPath: "/static/"
+        }
+      }
     ],
   },
 };
