@@ -20,10 +20,15 @@ module.exports = {
   optimization: {
     runtimeChunk: 'single',
   },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
   plugins: [
     new HtmlWebpackPlugin({
-        title: "Webpack-Setup",
-        template: './src/index.html'
+      title: "Webpack-Setup",
+      template: './src/index.html'
     })
   ],
   devServer: {
