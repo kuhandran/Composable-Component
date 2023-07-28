@@ -8,7 +8,6 @@ const TextBox: React.FC<TextBoxProps> = ({ style }) => {
     return (
         <input className={`${style}`} />
     )
-
 }
 
 export default TextBox;
