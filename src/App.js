@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import { Root } from "./Routes/Root";
 import './index.css';
+import React, { lazy } from 'react'
 
 export const App = createBrowserRouter(
   createRoutesFromElements(
@@ -13,3 +14,4 @@ export const App = createBrowserRouter(
     </Route>
   )
 );
+              

@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   output: {
@@ -18,7 +20,13 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   optimization: {
-    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all',
+      minSize: 10000,
+      maxSize: 250000,
+    },
+    minimize: true,
+    minimizer: [new TerserPlugin()],
   },
   performance: {
     hints: false,
@@ -29,7 +37,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "Webpack-Setup",
       template: './src/index.html'
-    })
+    }),
+    new BundleAnalyzerPlugin()
   ],
   devServer: {
     port: 3030, // you can change the port
@@ -55,10 +64,16 @@ module.exports = {
       },
       {
         test: /\.json$/,
-        loader: 'json-loader',
+        loader: 'json',
+        include: /static/,
+        options: {
+          esModule: false,
+          outputPath: '/static/',
+          publicPath: "/static/"
+        }
       },
       {
-        test: /\.(png|jpe?g|gif|ico|json)(\?\S*)?$/,
+        test: /\.(png|jpe?g|gif|ico)(\?\S*)?$/,
         loader: 'file-loader',
         include: /static/,
         options: {
@@ -70,6 +85,6 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js']
+    extensions: ['.ts', '.tsx', '.js', '.json']
   }
 };

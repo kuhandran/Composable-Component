@@ -1,0 +1,23 @@
+{
+    "pages": [
+        {
+            "element": "header"
+        },
+        {
+            "element": "imageHeader"
+        },
+        {
+            "element": "TextBox"
+        },
+        {
+            "element": "Button"
+        }
+    ],
+    "config": {
+        "template": {
+            "page": "header",
+            "pageStyle": "static/json/LoginStyle.json",
+            "header": ""
+        }
+    }
+}
