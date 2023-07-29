@@ -54,9 +54,13 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
       {
-        test: /\.(png|jpe?g|gif|ico)(\?\S*)?$/,
+        test: /\.json$/,
+        loader: 'json-loader',
+      },
+      {
+        test: /\.(png|jpe?g|gif|ico|json)(\?\S*)?$/,
         loader: 'file-loader',
-        include: /static\/img/,
+        include: /static/,
         options: {
           esModule: false,
           outputPath: '/static/',
