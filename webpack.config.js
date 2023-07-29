@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const TerserPlugin = require("terser-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   output: {
@@ -38,7 +39,11 @@ module.exports = {
       title: "Webpack-Setup",
       template: './src/index.html'
     }),
-    new BundleAnalyzerPlugin()
+    new BundleAnalyzerPlugin(),
+    new MiniCssExtractPlugin({
+      runtime: true,
+      linkType: "text/css",
+    })
   ],
   devServer: {
     port: 3030, // you can change the port

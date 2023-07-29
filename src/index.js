@@ -5,6 +5,7 @@ import store from './Store/Store'
 import { Provider } from 'react-redux';
 import { App } from './App';
 import { RouterProvider } from "react-router-dom";
+import './index.css';
 
 // ✅ correct ID passed
 const rootElement = document.getElementById('root');
