@@ -1,16 +1,14 @@
 import {
   createBrowserRouter,
   createRoutesFromElements,
-  Route,
+  Route
 } from "react-router-dom";
 import { Root } from "./Routes/Root";
 import React, { lazy } from 'react'
 
 export const App = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Root />}>
-      <Route path="dashboard" element={<Root />} />
-    </Route>
+      <Route path="/" element={<Root />}/>
   )
 );
               
