@@ -6,7 +6,7 @@ import {
 import { Root } from "./Routes/Root";
 import React, { lazy } from 'react';
 
-export function createPath() {
+export function createPath(path) {
 
   // const location = useLocation();
   // console.log(location);
